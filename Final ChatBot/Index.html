@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot Prototype</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="Style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="welcome-chat" id="welcome-chat">
+        <div class="chat-body">
+            Do you need assistance?
+            <br>
+            I am here to help you.
+        </div>
+    </div>
+
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            FAQ Chat Support
+        </div>
+        <div class="chat-body" id="chatBody">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="question-list" id="questionList">
+            <!-- Questions will appear here -->
+        </div>
+        <div class="input-container" id="inputContainer">
+            <label for="marksInput">Enter Marks:</label>
+            <input type="number" id="marksInput" min="0" max="100" value="0">
+            <button type="button" onclick="submitMarks()">Submit</button>
+        </div>
+        <div class="menu-icon" onclick="toggleQuestionList()">☰ Frequently Asked Questions ☰</div>
+        <div class="chat-footer">
+            <button class="clear-button" onclick="clearMessages()">Clear Messages</button>
+        </div>
+    </div>
+
+    <div class="welcome-chat-closer" id="welcome-chat-closerbutton" onclick="closewelcomeChat()">
+        <img src="Close.png" alt="Welcome Chat Close" width="15px" style="display: block;">
+    </div>
+
+    <div class="chat-widget" onclick="toggleChat()">
+        <img id="Image1" src="Chat.png" alt="Chat Open" width="40px" style="display: block;">
+        <img id="Image2" src="Close.png" alt="Chat Close" width="35px" style="display: none;">
+    </div>
+
+    <script src="Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+</body>
+
+</html>

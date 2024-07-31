@@ -1,0 +1,277 @@
+body {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    font-family: Georgia, serif;
+}
+
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #8FBC8F;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    z-index: 1000;
+}
+
+#Image1,
+#Image2 {
+    transition: opacity 0.5s ease;
+}
+
+#Image1 {
+    opacity: 1;
+}
+
+#Image2 {
+    opacity: 0;
+}
+
+.welcome-chat-closer {
+    position: fixed;
+    bottom: 165px;
+    right: 275px;
+    border-radius: 50%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.welcome-chat {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid #8FBC8F;
+    font-family: Georgia, serif;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    display: block;
+    z-index: 999;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    border: 3px solid #8FBC8F;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.chat-header {
+    background-color: #8FBC8F;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.message.bot {
+    justify-content: flex-start;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message .content {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.message.bot .content {
+    background: #f1f1f1;
+}
+
+.message.user .content {
+    background: #6B8E23;
+    color: #fff;
+}
+
+.message .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+
+.message.user .avatar {
+    display: none;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.typing-animation {
+    margin-top: 8px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: dot-animation 1.5s infinite ease-in-out;
+}
+
+@keyframes dot-animation {
+
+    0%,
+    60%,
+    100% {
+        opacity: 0.3;
+    }
+
+    30% {
+        opacity: 1;
+    }
+}
+
+.menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background: #8FBC8F;
+    color: #fff;
+    position: relative;
+}
+
+.question-list {
+    display: none;
+    position: absolute;
+    bottom: 84px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 2px solid #8FBC8F;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.question-list div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.question-list div:hover {
+    background: #8FBC8F;
+    color: #fff;
+}
+
+.chat-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #8FBC8F;
+    color: #fff;
+    border-top: 2px solid #ddd;
+}
+
+.clear-button {
+    padding: 5px 10px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background: #ff1a1a;
+}
+
+.input-container {
+    display: none;
+    position: absolute;
+    bottom: 44px;
+    left: 0;
+    height: 21px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    background: #fff;
+    border-top: 2px solid #8FBC8F;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container label {
+    margin-right: 10px;
+}
+
+.input-container input {
+    width: 100px;
+    margin-right: 10px;
+    border: 2px solid #8FBC8F;
+}
+
+.input-container button {
+    font-weight: bold;
+    color: white;
+    background-color: #8FBC8F;
+}
+
+.input-container button:hover {
+    background-color: #6B8E23;
+}
+
+.select2-container {
+    position: relative;
+    width: 100% !important;
+}
+
+#selectOptions {
+    width: 100%;
+}
